@@ -14,6 +14,8 @@ public class Board {
     @Id //PK
     @GeneratedValue(strategy = GenerationType.IDENTITY)// IDENTITY 자동 값 증가
     private Integer id;
+
     private String title;
+
     private String content;
 }
