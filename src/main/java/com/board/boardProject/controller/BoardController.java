@@ -10,5 +10,4 @@ public class BoardController {
     public String boardWrite(){
         return "boardwrite";
     }
-
 }
