@@ -6,12 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController//JSON 반환 어노테이션
 public class BoardController {
 
     @Autowired
     private BoardService boardService;
+
+    @GetMapping("/hello")
+    public String Hello(){
+        return "Hello";
+    }
+
     @GetMapping("/board/write")
     public String boardWrite() {
         return "boardwrite";
@@ -22,5 +29,4 @@ public class BoardController {
         boardService.write(board);
         return "";
     }
-
 }
