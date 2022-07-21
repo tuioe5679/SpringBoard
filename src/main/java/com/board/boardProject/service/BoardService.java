@@ -13,11 +13,16 @@ public class BoardService {
     @Autowired
     private BoardRepositroy boardRepositroy;
 
-    public void write(Board board){
+    public void boardwrite(Board board){
         boardRepositroy.save(board);
     }
 
     public List<Board> boardList(){
         return boardRepositroy.findAll();
     }
+
+    public Board boardView(Integer id){
+        return boardRepositroy.findById(id).get();
+    }
+
 }

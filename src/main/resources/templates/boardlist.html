@@ -22,9 +22,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="board : ${list}"> <!--each 반복문 끝까지 반복-->
+                <!--each 반복문 끝까지 반복-->
+                <tr th:each="board : ${list}">
                     <td th:text="${board.id}"></td>
-                    <td th:text="${board.title}">제목입니다</td>
+                    <!--href 링크에 뷰 매핑 값을 넣어줌 -->
+                    <td>
+                        <a th:text="${board.title}"  th:href="@{/board/view(id=${board.id})}"></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
